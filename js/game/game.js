@@ -122,19 +122,23 @@ angular
 		 * Calculate hand winner
 		 */
 		var decideWinner = function() {
-			if (!_.isNull(blackJackWinner())) {
-				return blackJackWinner();
-			}
-			
-			if (_.max($scope.playerHandPoints) == _.max($scope.dealerHandPoints)) {
+			var validPlayerPoints = _.filter($scope.playerHandPoints, function(element) {
+				return element <= 21;
+			});
+
+			var validDealerPoints = _.filter($scope.dealerHandPoints, function(element) {
+				return element <= 21;
+			});
+
+			if (_.max(validPlayerPoints) == _.max(validDealerPoints)) {
 				return $scope.results.DRAW;
 			}
 			
-			if (_.max($scope.playerHandPoints) > _.max($scope.dealerHandPoints)) {
+			if (_.max(validPlayerPoints) > _.max(validDealerPoints)) {
 				return $scope.results.WIN;
 			}
 			
-			if (_.max($scope.playerHandPoints) < _.max($scope.dealerHandPoints)) {
+			if (_.max(validPlayerPoints) < _.max(validDealerPoints)) {
 				return $scope.results.LOSE;
 			}
 		};
