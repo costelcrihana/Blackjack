@@ -1,0 +1,14 @@
+.card {
+	width: 102px;
+	height: 150px;
+	border: 1px solid #AAAAAA;
+	border-radius: 4px;
+	float: left;
+	margin: 5px;
+}
+
+.no-show {
+	background-color: #AAAAAA;
+	width: 102px;
+	height: 150px;
+}

@@ -1,0 +1,33 @@
+<div class="col-sm-6">
+	<div>
+		Dealer's total score: {{dealerScore}}
+	</div>
+</div>
+
+<div class="col-sm-6">
+	<div class="pull-right">
+		Your total score: {{playerScore}}
+	</div>
+</div>
+
+<div class="col-sm-6">
+	<div ng-repeat="card in dealerCards">
+		<card parameters="card" show-card="$index != 0 || isOkToStart()"/>
+	</div>
+</div>
+
+<div class="col-sm-6">
+	<div ng-repeat="card in playerCards">
+		<card parameters="card" show-card="true" class="pull-right"/>
+	</div>
+</div>
+
+<div class="col-sm-12 text-center">
+	<button ng-click="deal()" ng-disabled="!isOkToStart()" class="btn btn-success">Deal cards</button>
+	<button ng-click="hitMe()" ng_disabled="!isOkToTakeAction()" class="btn btn-success">Hit me!</button>
+	<button ng-click="stand()" ng_disabled="!isOkToTakeAction()" class="btn btn-success">Stand</button>
+</div>
+<br/><br/>
+<div class="col-sm-12 text-center">
+	{{handResult.message}}
+</div>

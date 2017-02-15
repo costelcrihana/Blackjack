@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Mindit Blackjack</title>
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+<link rel="stylesheet" type="text/css" href="css/blackjack.css">
+</head>
+<body ng-app="com.blackjack">
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Blackjack</a>
+            </div>
+
+            <ul class="nav navbar-nav">
+                <li><a href="#!/game"><i class="fa fa-caret-square-o-right"></i>&nbsp;Start game</a></li>
+            </ul>
+        </nav>
+    </header>
+	<div ng-view></div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+
+<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="js/welcome/welcome.js"></script>
+<script type="text/javascript" src="js/game/game.js"></script>
+<script type="text/javascript" src="js/card/card.js"></script>
+</html>
